@@ -15,12 +15,14 @@
 
 body {
   color: var(--font-color);
-  background-color: (--background);
+  background-color: var(--background);
   font-family: var(--font-family-default);
   text-shadow: rgba(0, 0, 0, 0.01) 0 0 1px;
   text-rendering: optimizeLegibility;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
+
+  @include size-18;
 
   *:focus {
     @include outline;
