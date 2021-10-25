@@ -1,0 +1,22 @@
+---
+const {title, link} = Astro.props
+---
+
+<div class="content-tile">
+  <div class="content-tile__inner">
+    <h2>{title}</h2>
+    <p><slot /></p>
+    <a href="#">{link}</a>
+  </div>
+</div>
+
+<style lang="scss">
+  .content-tile {
+    display: grid;
+    place-items: center;
+
+    .content-tile__inner {
+      padding: 6rem;
+    }
+  }
+</style>

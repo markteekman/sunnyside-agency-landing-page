@@ -1,10 +1,51 @@
 ---
 import DefaultLayout from '../layouts/DefaultLayout.astro'
+import ContentTile from '../components/ContentTile.astro'
+import ImageTile from '../components/ImageTile.astro'
+import HighlightTile from '../components/HighlightTile.astro'
+import Testimonials from '../components/Testimonials.astro'
 ---
+
 <DefaultLayout title="Frontend Mentor">
-  <section class="margin-32">
-    <div class="container">
-      <h1>Sunnyside Agency</h1>
-    </div>
-  </section>
+  <ContentTile
+    title="Transform your brand"
+    link="Learn more"
+  >
+    We are a full-service creative agency specializing in helping brands grow fast. Engage your clients through compelling visuals that do most of the marketing for you.
+  </ContentTile>
+  
+  <ImageTile 
+    img="transform"
+  />
+
+  <ContentTile
+    title="Stand out to the right audience"
+    link="Learn more"
+  >
+    Using a collaborative formula of designers, researchers, photographers, videographers, and copywriters, we’ll build and extend your brand in digital places. 
+  </ContentTile>
+
+  <ImageTile
+    img="stand-out"
+  />
+
+  <HighlightTile
+    img="graphic-design"
+    title="Graphic Design"
+  >
+    Great design makes you memorable. We deliver artwork that underscores your brand message and captures potential clients’ attention.
+  </HighlightTile>
+
+  <HighlightTile
+    img="photography"
+    title="Photography"
+  >
+    Increase your credibility by getting the most stunning, high-quality photos that improve your business image.
+  </HighlightTile>
+
+  <Testimonials />
 </DefaultLayout>
+
+<style lang="scss">
+
+</style>

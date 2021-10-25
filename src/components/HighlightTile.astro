@@ -1,0 +1,9 @@
+---
+const {img, title} = Astro.props
+---
+
+<div class="highlight-tile">
+  <img src="{`../assets/image-${img}.jpg`}" alt="">
+  <h2>{title}</h2>
+  <p><slot /></p>
+</div>

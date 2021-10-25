@@ -1,0 +1,10 @@
+---
+const {img, alt, name, job} = Astro.props
+---
+
+<div class="testimonial">
+  <img src="{`../assets/image-${img}.jpg`}" alt="{alt}">
+  <p><slot /></p>
+  <p>{name}</p>
+  <p>{job}</p>
+</div>

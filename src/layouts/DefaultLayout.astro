@@ -5,6 +5,7 @@ import Footer from '../components/Footer.astro'
 const {title} = Astro.props
 let subtitle = 'Sunnyside Agency Landing Page'
 ---
+
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
@@ -34,41 +35,55 @@ let subtitle = 'Sunnyside Agency Landing Page'
     <title>{title} - {subtitle}</title>
   </head>
   <body>
+    <div class="wrapper">
 
-    <!-- header -->
-    <Header />
+      <!-- header -->
+      <Header />
 
-    <!-- main -->
-    <main id="main-content">
+      <!-- main -->
+      <main id="main-content">
 
-      <slot />
+        <slot />
 
-    </main>
+      </main>
 
-    <!-- footer -->
-    <Footer />
+      <!-- footer -->
+      <Footer />
 
+    </div>
   </body>
 </html>
 
-<style lang="scss">
-  // sticky footer on low content pages
-  html,
+<style lang="scss" global>
+  @use "../styles/base/breakpoint" as *;
+  
   body {
-    height: 100%;
+    display: grid;
+    place-items: center;
+  }
+  
+  .wrapper {
+    background-color: var(--background);
+    max-width: 1440px;
   }
 
-  body {
-    display: flex;
-    flex-direction: column;
-    background-color: var(--background);
+  main {
+    display: grid;
+    grid-template-columns: 1fr;
 
-    main {
-      flex: 1 0 auto;
-    }
+    @include breakpoint(medium) {
+      grid-template-columns: 1fr 1fr;
 
-    footer {
-      flex-shrink: 0;
+      // switch image tile to right
+      > :nth-child(4) {
+        grid-column-start: 1;
+        grid-row-start: 2;
+      }
+
+      // set testimonials full width
+      > :last-child {
+        grid-column: span 2;
+      }
     }
   }
 </style>

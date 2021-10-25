@@ -1,11 +1,53 @@
+---
+import ImageTile from '../components/ImageTile.astro'
+---
+
 <footer>
-  <section class="padding-16 color-neutral">
-    <div class="container">
-      <p>&copy; Footer Copyright</p>
+  <section class="gallery">
+    <ImageTile 
+      img="gallery-milkbottles"
+    />
+    <ImageTile 
+      img="gallery-orange"
+    />
+    <ImageTile 
+      img="gallery-cone"
+    />
+    <ImageTile 
+      img="gallery-sugarcubes"
+    />
+  </section>
+  <section class="about">
+    <img src="../assets/logo.svg" alt="Sunnyside Agency logo">
+    <nav>
+      <ul>
+        <li>About</li>
+        <li>Services</li>
+        <li>Projects</li>
+      </ul>
+    </nav>
+    <div class="socials">
+      <img src="../assets/icon-facebook.svg" alt="Checkout our Facebook page">
+      <img src="../assets/icon-instagram.svg" alt="Checkout our Instagram page">
+      <img src="../assets/icon-twitter.svg" alt="Checkout our Twitter page">
+      <img src="../assets/icon-pinterest.svg" alt="Checkout our Pinterest page">
     </div>
   </section>
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
+    Coded by <a href="https://markteekman.nl">Mark Teekman</a>.
   </div>
 </footer>
+
+<style lang="scss">
+  @use '../styles/base/breakpoint' as *;
+  
+  .gallery {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    @include breakpoint(medium) {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+</style>

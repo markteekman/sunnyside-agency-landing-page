@@ -1,0 +1,22 @@
+---
+const {img} = Astro.props
+---
+
+<div class="image-tile" style="{`background-image: url('../assets/image-${img}.jpg')`}"></div>
+
+<style lang="scss">
+  .image-tile {
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 4 / 3;
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: var(--neutral-clr-grey-blue);
+    transition: background-size 0.3s ease-in-out;
+
+    &:hover {
+      background-size: 120%;
+    }
+  }
+</style>
