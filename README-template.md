@@ -75,6 +75,31 @@ $colors: (
 );
 ```
 
+- I've used the new CSS `aspect-ratio` property before, but with this challenge I found out just how easy it makes things. For example I'm using a `display-grid` for the content and image tiles below the hero section. Now without `ascpect-ratio` it's quite a hassle to have the image stay true to it's box. There are ways of course, but by just adding `ascpect-ratio: 4 /3` to the image tiles, it simply stretches out in the grid cell.
+
+```scss
+.image-tile {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 4 / 3;
+  // ...
+}
+```
+
+- For this one I wanted to add a hover zoom effect on the images, which I'd never done before, turns out it's quite simple by just setting the initial `background-size` to 100% and change that value to say 120% on zoom with a transition on the `background-size`:
+
+```scss
+.image-tile
+  // ...
+  background-size: 100%;
+  transition: background-size 0.3s ease-in-out;
+
+  &:hover {
+    background-size: 120%;
+  }
+}
+```
+
 ### Continued development
 
 - ...
