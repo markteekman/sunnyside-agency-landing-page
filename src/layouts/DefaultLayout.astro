@@ -75,12 +75,18 @@ let subtitle = 'Sunnyside Agency Landing Page'
       grid-template-columns: 1fr 1fr;
 
       // switch image tile to right
+      > :nth-child(2) {
+        grid-column-start: 2;
+      }
+
+      // switch image tile to left
       > :nth-child(4) {
         grid-column-start: 1;
         grid-row-start: 2;
       }
 
       // set testimonials full width
+      > :first-child,
       > :last-child {
         grid-column: span 2;
       }
