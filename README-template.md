@@ -100,6 +100,26 @@ $colors: (
 }
 ```
 
+- I learned how to 'fake' a delay in a CSS Animation, seeing as this is not possible by default. I did this for example with the arrow down animation. It's a 3s animation that goes from 0% to 15%. The remaining 85% is the delay (which comes down to 3 / 100 * 85 = 2.55s delay).
+
+```scss
+svg {
+  animation: fade-down 3s infinite alternate ease-in-out;
+}
+
+@keyframes fade-down {
+  0% {
+    opacity: 0;
+    transform: translateY(-2rem);
+  }
+
+  15% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+```
+
 ### Continued development
 
 - ...
@@ -108,6 +128,7 @@ $colors: (
 
 - [Intersection Observer API](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API) - The MDN documentation on how to use the Intersection Observer API.
 - [Intersection Observer Example](https://codepen.io/markteekman/pen/jOyXKpE) - An example I made in a CodePen of how to use the Intersection Observer.
+- [CSS Animation Delay](https://allurewebsolutions.com/repeat-css3-animation-with-delay) - This article explains how to 'fake' an delay in an infinite CSS Animation loop
 
 ## Author
 
