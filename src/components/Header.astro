@@ -2,23 +2,61 @@
 import SkipLinks from '../components/SkipLinks.astro'
 import Navigation from '../components/Navigation.astro'
 import ResponsiveToggle from '../components/ResponsiveToggle.astro'
-import HeroTile from '../components/HeroTile.astro'
 ---
 
 <header>
   <SkipLinks client:load />
-  <section class="padding-16 color-neutral">
+  <section class="nav-bar padding-16">
     <div class="container">
       <img src="/assets/logo.svg" alt="Sunnyside Agency logo">
       <ResponsiveToggle client:load />
       <Navigation client:load />
     </div>
   </section>
-  <HeroTile />
 </header>
+
+<script hoist>
+  // variables
+  const navBar = document.querySelector('header')
+  const navBarHeight = navBar.getBoundingClientRect().height
+
+  // execution
+  let prevScrollPos = window.scrollY
+
+  window.addEventListener('scroll', _ => {
+    const currentScrollPos = window.scrollY
+    const scrollDifference = currentScrollPos - prevScrollPos
+    const currentNavTop = parseFloat(getComputedStyle(navBar).top)
+
+    if (currentScrollPos > prevScrollPos) {
+      const navTopValue = Math.abs(currentNavTop - scrollDifference)
+
+      if (navTopValue > navBarHeight) {
+        navBar.style.top = `-${navBarHeight}px`
+      } else {
+        navBar.style.top = `-${navTopValue}px`
+      }
+    } else {
+      const navTopValue = currentNavTop - scrollDifference
+
+      if (navTopValue > 0) {
+        navBar.style.top = '0px'
+      } else {
+        navBar.style.top = `${navTopValue}`
+      }
+    }
+
+    prevScrollPos = currentScrollPos
+  })
+</script>
 
 <style lang="scss">
   @use "../styles/base/breakpoint" as *;
+
+  header {
+    position: sticky;
+    top: 0;
+  }
 
   .container  {
     gap: 1rem;
