@@ -1,3 +1,47 @@
 <section class="hero-tile">
   <h1>We are creatives</h1>
+  <svg width="36" height="114" xmlns="http://www.w3.org/2000/svg"><g stroke="#FFF" stroke-width="6" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"><path d="M18 3v100M3 95.484l15 15 15-15"/></g></svg>
 </section>
+
+<style lang="scss">
+  @use "../styles/base/size" as *;
+
+  .hero-tile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+    color: var(--neutral-clr-white);
+    background-image: url('/assets/mobile/image-header.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100vw;
+    height: 70vh;
+
+    h1 {
+      text-align: center;
+      padding-top: 9rem;
+      font-size: 2.5rem;
+      line-height: 3.25rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5rem;
+    }
+
+    svg {
+      animation: fade-down 3s infinite alternate ease-in-out;
+    }
+  }
+
+  @keyframes fade-down {
+    0% {
+      opacity: 0;
+      transform: translateY(-2rem);
+    }
+
+    15% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>
