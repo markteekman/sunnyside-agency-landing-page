@@ -1,5 +1,6 @@
 ---
 import DefaultLayout from '../layouts/DefaultLayout.astro'
+import HeroTile from '../components/HeroTile.astro'
 import ContentTile from '../components/ContentTile.astro'
 import ImageTile from '../components/ImageTile.astro'
 import HighlightTile from '../components/HighlightTile.astro'
@@ -7,15 +8,21 @@ import Testimonials from '../components/Testimonials.astro'
 ---
 
 <DefaultLayout title="Frontend Mentor">
+  <HeroTile />
+
+  <ImageTile 
+    img="transform"
+  />
+
   <ContentTile
     title="Transform your brand"
     link="Learn more"
   >
     We are a full-service creative agency specializing in helping brands grow fast. Engage your clients through compelling visuals that do most of the marketing for you.
   </ContentTile>
-  
-  <ImageTile 
-    img="transform"
+
+  <ImageTile
+    img="stand-out"
   />
 
   <ContentTile
@@ -24,10 +31,6 @@ import Testimonials from '../components/Testimonials.astro'
   >
     Using a collaborative formula of designers, researchers, photographers, videographers, and copywriters, we’ll build and extend your brand in digital places. 
   </ContentTile>
-
-  <ImageTile
-    img="stand-out"
-  />
 
   <HighlightTile
     img="graphic-design"
@@ -45,7 +48,3 @@ import Testimonials from '../components/Testimonials.astro'
 
   <Testimonials />
 </DefaultLayout>
-
-<style lang="scss">
-
-</style>
