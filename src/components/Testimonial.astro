@@ -5,6 +5,41 @@ const {img, alt, name, job} = Astro.props
 <div class="testimonial">
   <img src="{`../assets/image-${img}.jpg`}" alt="{alt}">
   <p><slot /></p>
-  <p>{name}</p>
-  <p>{job}</p>
+  <div class="details">
+    <p>{name}</p>
+    <p>{job}</p>
+  </div>
 </div>
+
+<style lang="scss">
+  @use "../styles/base/size" as *;
+
+  .testimonial {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    text-align: center;
+    color: var(--neutral-clr-dark-gray);
+
+    img {
+      width: 60px;
+      height: 60px;
+      border-radius: 100%;
+    }
+
+    .details {
+      > :first-child {
+        color: var(--neutral-clr-dark-blue);
+        font-family: var(--font-family-special);
+        font-weight: bold;
+      }
+
+      > :last-child {
+        color: var(--neutral-clr-grayish-blue);
+        margin-top: 0.25rem;
+        @include size-14;
+      }
+    }
+  }
+</style>
