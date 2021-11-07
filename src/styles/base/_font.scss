@@ -24,8 +24,14 @@ body {
 
   @include size-18;
 
-  *:focus {
+  *:focus,
+  *:focus-visible {
     @include outline;
+  }
+
+  *:focus:not(:focus-visible) {
+    outline: none;
+    box-shadow: none;
   }
 
   a {
