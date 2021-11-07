@@ -92,10 +92,10 @@ $colors: (
 .image-tile
   // ...
   background-size: 100%;
-  transition: background-size 0.3s ease-in-out;
+  transition: background-size 0.2s ease-in-out;
 
   &:hover {
-    background-size: 120%;
+    background-size: 110%;
   }
 }
 ```
