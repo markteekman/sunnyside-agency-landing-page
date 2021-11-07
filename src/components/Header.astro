@@ -9,20 +9,19 @@ import ResponsiveToggle from '../components/ResponsiveToggle.astro'
   <section class="nav-bar padding-16">
     <div class="container">
       <img src="/assets/logo.svg" alt="Sunnyside Agency logo">
-      <ResponsiveToggle client:load />
-      <Navigation client:load />
+      <ResponsiveToggle />
+      <Navigation />
     </div>
   </section>
 </header>
 
-<script hoist>
+<script>
   // variables
   const navBar = document.querySelector('header')
   const navBarHeight = navBar.getBoundingClientRect().height
-
-  // execution
   let prevScrollPos = window.scrollY
 
+  // execution
   window.addEventListener('scroll', _ => {
     const currentScrollPos = window.scrollY
     const scrollDifference = currentScrollPos - prevScrollPos
@@ -42,10 +41,11 @@ import ResponsiveToggle from '../components/ResponsiveToggle.astro'
       if (navTopValue > 0) {
         navBar.style.top = '0px'
       } else {
-        navBar.style.top = `${navTopValue}`
+        navBar.style.top = `${navTopValue}px`
       }
     }
 
+    // set previous scroll position to current scroll position
     prevScrollPos = currentScrollPos
   })
 </script>
@@ -54,11 +54,14 @@ import ResponsiveToggle from '../components/ResponsiveToggle.astro'
   @use "../styles/base/breakpoint" as *;
 
   header {
+    background-color: #3ebfff;
     position: sticky;
     top: 0;
+    z-index: 1;
   }
 
   .container  {
+    position: relative;
     gap: 1rem;
     
     img {
