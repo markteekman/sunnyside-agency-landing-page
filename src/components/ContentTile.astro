@@ -1,22 +1,67 @@
 ---
-const {title, link} = Astro.props
+const {title, link, color} = Astro.props
 ---
 
 <div class="content-tile">
   <div class="content-tile__inner">
     <h2>{title}</h2>
     <p><slot /></p>
-    <a href="#">{link}</a>
+    <a href="#" class="{`clr-${color}`}">{link}</a>
   </div>
 </div>
 
 <style lang="scss">
+  @use "../styles/base/breakpoint" as *;
+
   .content-tile {
     display: grid;
     place-items: center;
 
     .content-tile__inner {
-      padding: 6rem;
+      gap: 2rem;
+      text-align: center;
+      padding: 4rem 1.5rem;
+
+      @include breakpoint(medium) {
+        text-align: left;
+        padding: 8rem 6rem;
+
+        a {
+          text-align: center;
+        }
+      }
+
+      a {
+        display: inline-block;
+        text-transform: uppercase;
+        text-decoration: none;
+        font-family: var(--font-family-special);
+        font-weight: bold;
+        transition: all 0.1s ease-out;
+        min-width: 11ch;
+
+        &.clr-yellow {
+          box-shadow: inset 0 -0.3rem 0 rgba(#fad400, 0.3);
+
+          &:hover,
+          &:focus {
+            box-shadow: inset 0 -1.5rem 0 rgba(#fad400, 0.9);
+          }
+        }
+
+        &.clr-red {
+          box-shadow: inset 0 -0.3rem 0 rgba(#fe7867, 0.3);
+
+          &:hover,
+          &:focus {
+            box-shadow: inset 0 -1.5rem 0 rgba(#fe7867, 0.9);
+          }
+        }
+      }
+
+      > *:not(:first-child) {
+        margin-top: 1.5em;
+      }
     }
   }
 </style>
