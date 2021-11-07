@@ -3,7 +3,7 @@
     <li><a href="#">About</a></li>
     <li><a href="#">Services</a></li>
     <li><a href="#">Projects</a></li>
-    <li><a href="#">Contact</a></li>
+    <li><a href="#" class="call-to-action">Contact</a></li>
   </ul>
 </nav>
 
@@ -57,25 +57,80 @@
   @use '../styles/base/breakpoint' as *;
 
   nav {
-    display: none;
-    flex-basis: 100%;
+    background-color: var(--neutral-clr-white);
+    visibility: hidden;
+    position: absolute;
+    padding: 2rem;
+    box-shadow: 0 0 25px 20px rgba(0, 0, 0, 0.15);
+    top: 5rem;
+    left: 1rem;
+    right: 1rem;
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+
+    @include breakpoint(medium) {
+      position: relative;
+      visibility: visible;
+      opacity: 1;
+      box-shadow: none;
+    }
 
     &.show {
-      display: block;
+      opacity: 1;
+      visibility: visible;
+
+      &::before {
+        content: '';
+        display: block;
+        position: absolute;
+        border-top: 30px solid transparent;
+        border-right: 30px solid var(--neutral-clr-white);
+        top: -25px;
+        right: 0;
+      }
     }
 
     @include breakpoint(medium) {
+      background-color: transparent;
       display: block;
       flex-basis: auto;
+      position: relative;
+      opacity: 1;
+      inset: 0;
+      padding: 0;
+      box-shadow: none;
     }
 
     > ul {
       display: flex;
       flex-direction: column;
-      gap: 0.75rem;
+      align-items: center;
+      gap: 1.5rem;
+
+      li:last-child { margin-top: 0.75rem; }
 
       @include breakpoint(medium) {
         flex-direction: row;
+
+        li:last-child { margin-top: 0rem; }
+      }
+    }
+
+    a {
+      text-decoration: none;
+
+      &:hover,
+      &:focus {
+        text-decoration: underline;
+      }
+
+      &.call-to-action {
+        background-color: var(--primary-clr-yellow);
+        border-radius: 3rem;
+        text-transform: uppercase;
+        font-family: var(--font-family-special);
+        font-size: 1rem;
+        padding: 0.75rem 1.5rem;
       }
     }
   }
