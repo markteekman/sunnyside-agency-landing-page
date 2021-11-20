@@ -55,23 +55,23 @@ import Testimonials from '../components/Testimonials.astro'
 </DefaultLayout>
 
 <script>
-  // const animations = [...document.querySelectorAll('.animate')]
+  const animations = [...document.querySelectorAll('.animate')]
 
-  // // create observer
-  // const callback = entries => {
-  //   entries.forEach(entry => {
-  //     if (entry.isIntersecting) {
-  //       entry.target.classList.add('visible')
-  //     }
+  // create observer
+  const callback = entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible')
+      }
       
-  //     if (!entry.isIntersecting && entry.boundingClientRect.top > 0) {
-  //       entry.target.classList.remove('visible')
-  //     }
-  //   })
-  // }
+      if (!entry.isIntersecting && entry.boundingClientRect.top > 0) {
+        entry.target.classList.remove('visible')
+      }
+    })
+  }
 
-  // const observer = new IntersectionObserver(callback)
+  const observer = new IntersectionObserver(callback)
 
-  // // observe boxes
-  // animations.forEach(animation => observer.observe(animation))
+  // observe boxes
+  animations.forEach(animation => observer.observe(animation))
 </script>
