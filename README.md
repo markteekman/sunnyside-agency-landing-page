@@ -40,8 +40,8 @@ As a bonus I want to achieve the following extra challenges:
 
 ### Links
 
-- [Solution URL]()
-- [Live Site URL]()
+- [Solution URL](https://www.frontendmentor.io/solutions/astro-wcag-accessibility-sticky-navigation-revealing-footer-DCMEQTsiX)
+- [Live Site URL](https://markteekman.github.io/sunnyside-agency-landing-page/)
 
 ## My process
 
