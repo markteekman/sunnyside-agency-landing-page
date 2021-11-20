@@ -64,6 +64,20 @@ import Testimonial from '../components/Testimonial.astro'
       flex-direction: row;
     }
 
-  
+    :global(.animate) {
+      opacity: 0;
+      transform: translateY(5rem);
+      transition: opacity 0.75s ease-in-out, transform 0.75s ease-in-out;
+
+      &.visible {
+        opacity: 1;
+        transform: translateY(0);
+
+        @include breakpoint(medium) {
+          &:nth-child(2) { transition-delay: 0.1s; }
+          &:nth-child(3) { transition-delay: 0.2s; }
+        }
+      }
+    }
   }
 </style>
