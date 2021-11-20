@@ -1,6 +1,8 @@
 <section class="hero-tile">
   <h1>We are creatives</h1>
-  <svg width="36" height="114" xmlns="http://www.w3.org/2000/svg"><g stroke="#FFF" stroke-width="6" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"><path d="M18 3v100M3 95.484l15 15 15-15"/></g></svg>
+  <a href="#next-section">
+    <svg width="36" height="114" viewBox="0 0 36 114" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 95.484L18 110.484L33 95.484M18 3V103V3Z" stroke="#212E3C" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </a>
 </section>
 
 <style lang="scss">
@@ -12,10 +14,10 @@
     flex-direction: column;
     align-items: center;
     gap: 3rem;
-    color: var(--neutral-clr-white);
+    color: var(--neutral-clr-dark-blue);
     background-image: url('/assets/mobile/image-header.jpg');
     background-size: cover;
-    background-position: center -100px;
+    background-position: center center;
     background-repeat: no-repeat;
     width: 100%;
     height: 50vh;
@@ -27,6 +29,7 @@
       text-transform: uppercase;
       letter-spacing: 0.5rem;
       padding-top: 4rem;
+      animation: fade-in 0.3s ease-out;
 
       @include breakpoint(medium) {
         font-size: 3.5rem;
@@ -42,6 +45,18 @@
       height: 60vh;
       background-image: url('/assets/image-header.jpg');
       background-position: center;
+    }
+  }
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(5rem);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
     }
   }
 
