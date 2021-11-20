@@ -11,6 +11,7 @@ import Testimonials from '../components/Testimonials.astro'
   <HeroTile />
 
   <ImageTile 
+    id="next-section"
     img="transform"
   />
 
@@ -52,3 +53,25 @@ import Testimonials from '../components/Testimonials.astro'
 
   <Testimonials />
 </DefaultLayout>
+
+<script>
+  const animations = [...document.querySelectorAll('.animate')]
+
+  // create observer
+  const callback = entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible')
+      }
+      
+      if (!entry.isIntersecting && entry.boundingClientRect.top > 0) {
+        entry.target.classList.remove('visible')
+      }
+    })
+  }
+
+  const observer = new IntersectionObserver(callback)
+
+  // observe boxes
+  animations.forEach(animation => observer.observe(animation))
+</script>
