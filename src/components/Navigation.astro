@@ -66,7 +66,6 @@
     left: 1rem;
     right: 1rem;
     opacity: 0;
-    transition: opacity 0.2s ease-in-out;
 
     @include breakpoint(medium) {
       position: relative;
@@ -78,6 +77,7 @@
     &.show {
       opacity: 1;
       visibility: visible;
+      transition: opacity 0.2s ease-in-out;
 
       &::before {
         content: '';
@@ -117,7 +117,9 @@
     }
 
     a {
+      color: var(--neutral-clr-dark-blue);
       text-decoration: none;
+      transition: all 0.2s ease-in-out;
 
       &:hover,
       &:focus {
@@ -131,7 +133,28 @@
         font-family: var(--font-family-special);
         font-size: 1rem;
         padding: 0.75rem 1.5rem;
+
+        @include breakpoint(medium) {
+          background-color: var(--neutral-clr-white);
+          box-shadow: 0 0 0 0 rgba(#19536b, 0.8);
+          animation: pulse 5s infinite;
+
+          &:hover,
+          &:focus {
+            color: var(--neutral-clr-white);
+            background-color: var(--neutral-clr-dark-blue);
+          }
+        }
       }
+    }
+  }
+
+  @keyframes pulse {
+    10% {
+      box-shadow: 0 0 0 10px rgba(#19536b, 0);
+    }
+    11% {
+      box-shadow: 0 0 0 0 rgba(#19536b, 0);
     }
   }
 </style>
