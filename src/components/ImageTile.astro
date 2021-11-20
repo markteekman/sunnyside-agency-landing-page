@@ -2,7 +2,7 @@
 const {id, img} = Astro.props
 ---
 
-<div id="{id}" class="image-tile" style="{`background-image: url('../assets/image-${img}.jpg')`}"></div>
+<div id="{id}" class="image-tile" style="{`background-image: url('/assets/image-${img}.jpg')`}"></div>
 
 <style lang="scss">
   .image-tile {

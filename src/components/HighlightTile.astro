@@ -2,7 +2,7 @@
 const {img, title, color} = Astro.props
 ---
 
-<div class="{`highlight-tile clr-${color}`}" style="{`background-image: url('../assets/image-${img}.jpg')`}">
+<div class="{`highlight-tile clr-${color}`}" style="{`background-image: url('/assets/image-${img}.jpg')`}">
   <h2>{title}</h2>
   <p><slot /></p>
 </div>
