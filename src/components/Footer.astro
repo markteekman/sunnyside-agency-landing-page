@@ -45,6 +45,11 @@ import ImageTile from '../components/ImageTile.astro'
 
   footer {
     background-color: var(--primary-clr-light-cyan);
+    position: sticky;
+    z-index: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
   }
   
   .gallery {
@@ -53,6 +58,15 @@ import ImageTile from '../components/ImageTile.astro'
 
     @include breakpoint(medium) {
       grid-template-columns: repeat(4, 1fr);
+    }
+
+    :global(.image-tile) {
+      background-size: 100%;
+      transition: background-size 0.2s ease-in-out;
+
+      &:hover {
+        background-size: 120%;
+      }
     }
   }
 

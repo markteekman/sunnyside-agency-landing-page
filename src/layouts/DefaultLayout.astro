@@ -70,9 +70,13 @@ let subtitle = 'Sunnyside Agency Landing Page'
   main {
     display: grid;
     grid-template-columns: 1fr;
+    background-color: var(--neutral-clr-white);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 1;
 
     @include breakpoint(medium) {
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 50% 50%;
 
       // switch image tile to right
       > :nth-child(2) {
