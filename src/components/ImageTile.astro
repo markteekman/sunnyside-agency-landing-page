@@ -1,22 +1,18 @@
 ---
-const {img} = Astro.props
+const {id, img} = Astro.props
 ---
 
-<div class="image-tile" style="{`background-image: url('../assets/image-${img}.jpg')`}"></div>
+<div id="{id}" class="image-tile" style="{`background-image: url('../assets/image-${img}.jpg')`}"></div>
 
 <style lang="scss">
   .image-tile {
     width: 100%;
     height: 100%;
     aspect-ratio: 4 / 3;
-    background-size: 100%;
+    background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     background-color: var(--neutral-clr-grey-blue);
     transition: background-size 0.2s ease-in-out;
-
-    &:hover {
-      background-size: 110%;
-    }
   }
 </style>
