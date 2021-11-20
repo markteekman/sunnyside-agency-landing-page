@@ -19,17 +19,18 @@ const {img, title, color} = Astro.props
     gap: 1.5rem;
     width: 100%;
     height: 100%;
-    aspect-ratio: 4 / 6;
-    background-size: 180%;
+    background-size: cover;
     background-position: top center;
     background-repeat: no-repeat;
     text-align: center;
-    padding: 3.5rem 1rem;
+    padding: 60% 1rem 2rem;
 
     @include breakpoint(medium) {
-      aspect-ratio: 4 / 4;
-      background-size: 120%;
-      padding: 3.5rem 9rem;
+      padding: 70% 4rem 2rem;
+    }
+
+    @include breakpoint(large) {
+      padding: 70% 9rem 2rem;
     }
 
     &.clr-green { color: var(--primary-clr-dark-cyan); }
