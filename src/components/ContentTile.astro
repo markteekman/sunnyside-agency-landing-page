@@ -3,7 +3,7 @@ const {title, link, color} = Astro.props
 ---
 
 <div class="content-tile">
-  <div class="content-tile__inner">
+  <div class="content-tile__inner animate">
     <h2>{title}</h2>
     <p><slot /></p>
     <a href="#" class="{`clr-${color}`}">{link}</a>
@@ -61,6 +61,17 @@ const {title, link, color} = Astro.props
 
       > *:not(:first-child) {
         margin-top: 1.5em;
+      }
+    }
+
+    .animate {
+      opacity: 0;
+      transform: translateY(5rem);
+      transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+
+      &.visible {
+        opacity: 1;
+        transform: translateY(0);
       }
     }
   }
