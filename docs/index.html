@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en" dir="ltr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta http-equiv="X-UA-Compatible" content="ie=edge"><link rel="icon" type="image/svg+xml" href="favicon.png"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""><link href="https://fonts.googleapis.com/css2?family=Barlow:wght@600&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@700;900&amp;display=swap" rel="stylesheet"><link rel="stylesheet" href="styles.css" type="text/css"><meta property="og:title" content="Accessible Astro Starter"><meta property="og:description" content="A starter project with accessible features using Astro static site builder. Contains accessible landmarks, skip links, a dark mode color scheme, better focus outline and keyboard menu navigation."><meta property="og:type" content="website"><meta property="og:url" content="https://accessible-astro.markteekman.nl/"><meta property="og:image" content="assets/social-preview-image.png"><title>Frontend Mentor - Sunnyside Agency Landing Page</title></head><body><div class="wrapper astro-PXnMfDZF"><header class="astro-zvkshqHn"><div class="astro-hC4V2Qfk"><div class="container astro-hC4V2Qfk"><nav class="skip-links astro-hC4V2Qfk" aria-label="Skiplinks"><ul class="astro-hC4V2Qfk"><li class="astro-hC4V2Qfk"><a href="#main-content" data-skip-link="" class="astro-hC4V2Qfk">Skip to main content</a></li></ul></nav></div></div><script>
+<!DOCTYPE html><html lang="en" dir="ltr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta http-equiv="X-UA-Compatible" content="ie=edge"><link rel="icon" type="image/svg+xml" href="favicon.png"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""><link href="https://fonts.googleapis.com/css2?family=Barlow:wght@600&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@700;900&amp;display=swap" rel="stylesheet"><link rel="stylesheet" href="styles.css" type="text/css"><meta property="og:title" content="Sunnyside Agency Landing Page"><meta property="og:description" content="Frontend Mentor challenge Easybank Landing Page using CSS Flexbox and Grid, Accessibility best practices, CSS3 animations and the JavaScript IntersectionObserver."><meta property="og:type" content="website"><meta property="og:url" content="https://markteekman.github.io/sunnyside-agency-landing-page/"><meta property="og:image" content="assets/social-preview-image.png"><title>Frontend Mentor - Sunnyside Agency Landing Page</title></head><body><div class="wrapper astro-PXnMfDZF"><header class="astro-zvkshqHn"><div class="astro-hC4V2Qfk"><div class="container astro-hC4V2Qfk"><nav class="skip-links astro-hC4V2Qfk" aria-label="Skiplinks"><ul class="astro-hC4V2Qfk"><li class="astro-hC4V2Qfk"><a href="#main-content" data-skip-link="" class="astro-hC4V2Qfk">Skip to main content</a></li></ul></nav></div></div><script>
   // variables
   const skipLinks = [...document.querySelectorAll('[data-skip-link]')]
 
@@ -160,23 +160,23 @@
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank" class="astro-n31rkg6Y">Frontend Mentor</a>. 
     Coded by <a href="https://markteekman.nl" class="astro-n31rkg6Y">Mark Teekman</a>.
   </div></footer></div><script>
-  // const animations = [...document.querySelectorAll('.animate')]
+  const animations = [...document.querySelectorAll('.animate')]
 
-  // // create observer
-  // const callback = entries => {
-  //   entries.forEach(entry => {
-  //     if (entry.isIntersecting) {
-  //       entry.target.classList.add('visible')
-  //     }
+  // create observer
+  const callback = entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible')
+      }
       
-  //     if (!entry.isIntersecting && entry.boundingClientRect.top > 0) {
-  //       entry.target.classList.remove('visible')
-  //     }
-  //   })
-  // }
+      if (!entry.isIntersecting && entry.boundingClientRect.top > 0) {
+        entry.target.classList.remove('visible')
+      }
+    })
+  }
 
-  // const observer = new IntersectionObserver(callback)
+  const observer = new IntersectionObserver(callback)
 
-  // // observe boxes
-  // animations.forEach(animation => observer.observe(animation))
+  // observe boxes
+  animations.forEach(animation => observer.observe(animation))
 </script></body></html>
