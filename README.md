@@ -36,7 +36,7 @@ As a bonus I want to achieve the following extra challenges:
 
 ### Screenshot
 
-![social-preview-image](https://user-images.githubusercontent.com/3909046/142725188-886787ed-803c-4887-a0ec-727b12b5fbb7.png)
+![social-preview-image](https://user-images.githubusercontent.com/3909046/142756907-38200915-1055-47ec-8c09-a98b7680becf.png)
 
 ### Links
 
