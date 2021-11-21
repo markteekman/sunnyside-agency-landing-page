@@ -111,6 +111,7 @@
 
       @include breakpoint(medium) {
         flex-direction: row;
+        gap: 3rem;
 
         li:last-child { margin-top: 0rem; }
       }
@@ -137,7 +138,7 @@
         @include breakpoint(medium) {
           background-color: var(--neutral-clr-white);
           box-shadow: 0 0 0 0 rgba(#19536b, 0.8);
-          animation: pulse 5s infinite;
+          animation: pulse 4s infinite;
 
           &:hover,
           &:focus {

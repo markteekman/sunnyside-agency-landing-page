@@ -12,6 +12,7 @@ const {img, alt, name, job} = Astro.props
 </div>
 
 <style lang="scss">
+  @use "../styles/base/breakpoint" as *;
   @use "../styles/base/size" as *;
 
   .testimonial {
@@ -40,6 +41,10 @@ const {img, alt, name, job} = Astro.props
         margin-top: 0.25rem;
         @include size-14;
       }
+    }
+
+    @include breakpoint(medium) {
+      padding: 0 1rem;
     }
   }
 </style>
