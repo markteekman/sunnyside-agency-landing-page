@@ -59,15 +59,6 @@ import ImageTile from '../components/ImageTile.astro'
     @include breakpoint(medium) {
       grid-template-columns: repeat(4, 1fr);
     }
-
-    :global(.image-tile) {
-      background-size: 100%;
-      transition: background-size 0.2s ease-in-out;
-
-      &:hover {
-        background-size: 120%;
-      }
-    }
   }
 
   .about {
