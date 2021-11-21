@@ -157,6 +157,15 @@ footer {
 }
 ```
 
+- I used the `object-fit: cover` CSS property for the first time on images and found it super useful!
+
+```scss
+img {
+  object-fit: cover;
+  height: 100%;
+}
+```
+
 ### Continued development
 
 - Nothing at the moment.
