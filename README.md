@@ -86,7 +86,7 @@ $colors: (
 }
 ```
 
-- For this one I wanted to add a hover zoom effect on the four images in the footer, which I'd never done before, turns out it's quite simple by just setting the initial `background-size` to 100% and change that value to say 120% on zoom with a transition on the `background-size`:
+- For this one I wanted to add a hover zoom effect on the four images in the footer, which I'd never done before, turns out it's quite simple by just setting the initial `background-size` to 100% and change that value to say 120% on zoom with a transition on the `background-size` (eventually I removed this from the final build):
 
 ```scss
 .image-tile
@@ -138,7 +138,7 @@ svg {
 }
 ```
 
-- Lastly I learned how to easily add a revealing footer. It's quite simple using `z-index` and `position: sticky`:
+- I learned how to easily add a revealing footer. It's quite simple using `z-index` and `position: sticky`:
 
 ```scss
 main {
