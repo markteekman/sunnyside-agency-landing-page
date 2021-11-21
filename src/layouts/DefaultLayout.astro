@@ -60,21 +60,15 @@ let subtitle = 'Sunnyside Agency Landing Page'
   body {
     display: grid;
     place-items: center;
-
-    .animate {
-      opacity: 1 !important;
-      transform: translateY(0) !important;
-    }
-
-    footer {
-      position: relative !important;
-    }
   }
   
   .wrapper {
     background-color: #3ebfff;
-    padding-top: 2em;
     max-width: 1440px;
+
+    @include breakpoint(medium) {
+      padding-top: 2em;
+    }
   }
 
   main {
