@@ -3,8 +3,8 @@ const {id, img} = Astro.props
 ---
 
 <div id="{id}" class="image-tile">
-  <img src="{`assets/mobile/image-${img}.jpg`}" alt="" class="is-mobile">
-  <img src="{`assets/image-${img}.jpg`}" alt="" class="is-desktop">
+  <img src="{`/assets/mobile/image-${img}.jpg`}" alt="" class="is-mobile">
+  <img src="{`/assets/image-${img}.jpg`}" alt="" class="is-desktop">
 </div>
 
 <style lang="scss">
