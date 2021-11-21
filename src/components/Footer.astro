@@ -59,6 +59,14 @@ import ImageTile from '../components/ImageTile.astro'
     @include breakpoint(medium) {
       grid-template-columns: repeat(4, 1fr);
     }
+
+    :global(.image-tile img) {
+      max-height: 200px;
+
+      @include breakpoint(medium) {
+        max-height: 100%;
+      }
+    } 
   }
 
   .about {

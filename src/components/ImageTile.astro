@@ -15,6 +15,12 @@ const {id, img} = Astro.props
     img {
       object-fit: cover;
       height: 100%;
+      width: 100%;
+      max-height: 400px;
+
+      @include breakpoint(medium) {
+        max-height: 100%;
+      }
     }
 
     .is-mobile {
